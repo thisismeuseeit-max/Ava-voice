@@ -1,11 +1,42 @@
-<div align="center">
+# پروژه دستیار صوتی هوشمند اندروید «آوا» (Ava Voice Assistant)
+### سورس کامل، معماری ماژولار کاتلین و راهنمای ساخت برای Agent
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+این مخزن شامل **سورس کد کامل، ماژولار و قابل کامپایل پروژه اندروید** برای دستیار صوتی فارسی «آوا»، همراه با **کنسول وب تعاملی و شبیه‌ساز زنده** جهت آزمایش و بازبینی کامل معماری است.
 
-  <h1>Built with AI Studio</h2>
+---
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## 🎯 بخش‌های اصلی پروژه
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+1. **پروژه بومی اندروید (`/android`)**:
+   - نوشته شده با زبان **Kotlin** و فریم‌ورک مدرن **Jetpack Compose**.
+   - مجهز به فایل‌های استاندارد بیلد Gradle (`settings.gradle.kts`, `build.gradle.kts`, `gradle.properties`, `gradle-wrapper`).
+   - ساختار تمیز و ماژولار شامل لایه‌های Core, Voice, NLP, Security, Agent, Memory, Engine و UI.
+   - گارد ایمنی عدم تداخل با تماس تلفنی (حل کامل باگ بیدار شدن در زمان مکالمه).
+   - پیاده‌سازی اصول امنیتی OWASP MASVS و ذخیره‌سازی رمزنگاری‌شده در Android Keystore.
+   - آزمون‌های خودکار در `app/src/test/kotlin/`.
 
-</div>
+2. **مستندات تحویل به Agent جهت کامپایل**:
+   - `BUILD_GUIDE.md`: راهنمای گام‌به‌گام اجرای دستورات Gradle (`./gradlew assembleDebug`)، تنظیم SDK 34، JDK 17 و عیب‌یابی.
+   - `ARCHITECTURE.md`: دیاگرام کامل زنجیره پردازش صدا و ماشین وضعیت ۱۵ حالته.
+   - `SECURITY.md`: مشخصات دروازه امنیتی، فیلتر تزریق پرامپت و حفظ حریم خصوصی.
+   - `ENGINE_AUDIT.md`: جدول ممیزی موتورهای Primary و Fallback.
+   - `TEST_REPORT.md`: گزارش نتایج تست‌های خودکار.
+
+3. **شبیه‌ساز و کنسول وب تعاملی (`/src`)**:
+   - پیاده‌سازی دقیق منطق دستیار با رابط کاربری لوکس **Claymorphism 3D**.
+   - تشخیص و پردازش گفتار فارسی (STT) و پخش صدای فارسی (TTS).
+   - گوی صوتی سه‌بعدی پویا با انیمیشن‌های وابسته به وضعیت.
+   - پنل شبیه‌سازی تداخل تماس تلفنی و بازرسی زنده سورس‌کدهای کاتلین.
+
+---
+
+## 🚀 دستور کامپایل سریع برای توسعه‌دهنده یا Agent
+
+```bash
+cd android
+chmod +x ./gradlew
+./gradlew test
+./gradlew assembleDebug
+```
+فایل نهایی در مسیر `android/app/build/outputs/apk/debug/app-debug.apk` ایجاد می‌شود.
+اطلاعات تکمیلی در `BUILD_GUIDE.md` در دسترس است.

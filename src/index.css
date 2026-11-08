@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Vazirmatn', 'Outfit', system-ui, -apple-system, sans-serif;
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --neon-green: #39FF14;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #000000;
+    color: #f8fafc;
+  }
+}
+
+/* Loopstack-inspired Dark Glass & Neon Green styling */
+.dark-glass-card {
+  background: rgba(13, 14, 18, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.8),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark-glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.dark-glass-card-neon {
+  background: rgba(10, 14, 10, 0.8);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(57, 255, 20, 0.25);
+  border-radius: 1.5rem;
+  box-shadow: 
+    0 10px 35px rgba(0, 0, 0, 0.9),
+    0 0 20px rgba(57, 255, 20, 0.07),
+    inset 0 1px 0 rgba(57, 255, 20, 0.2);
+}
+
+/* Loopstack Blinking Neon Status Dot */
+.blinking-dot {
+  width: 9px;
+  height: 9px;
+  background-color: #39FF14;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  animation: pulse-glow 2s infinite ease-in-out;
+}
+
+.blinking-dot::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background-color: rgba(57, 255, 20, 0.45);
+  border-radius: 50%;
+  animation: wave-expand 2s infinite ease-in-out;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(0.9);
+    box-shadow: 0 0 5px rgba(57, 255, 20, 0.4);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+    box-shadow: 0 0 14px rgba(57, 255, 20, 0.95);
+  }
+}
+
+@keyframes wave-expand {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+/* Loopstack Pill Action Button */
+.loopstack-btn {
+  background-color: #050505;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  padding: 0.65rem 1.4rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.loopstack-btn:hover {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(255, 255, 255, 0.15);
+}
+
+.loopstack-btn:active {
+  transform: translateY(0);
+}
+
+.loopstack-btn-neon {
+  background: linear-gradient(135deg, rgba(57, 255, 20, 0.15) 0%, rgba(10, 20, 10, 0.9) 100%);
+  border: 1px solid rgba(57, 255, 20, 0.4);
+  color: #ffffff;
+  padding: 0.65rem 1.4rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 25px rgba(57, 255, 20, 0.15);
+}
+
+.loopstack-btn-neon:hover {
+  background: #39FF14;
+  color: #000000;
+  border-color: #39FF14;
+  box-shadow: 0 0 30px rgba(57, 255, 20, 0.45);
+  transform: translateY(-2px);
+}
+
+/* 3D Voice Orb in Loopstack Void Style */
+@keyframes orb-loopstack-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 
+      0 0 30px rgba(57, 255, 20, 0.3),
+      0 0 70px rgba(99, 102, 241, 0.2),
+      inset 0 0 25px rgba(57, 255, 20, 0.2);
+  }
+  50% {
+    transform: scale(1.07);
+    box-shadow: 
+      0 0 45px rgba(57, 255, 20, 0.6),
+      0 0 100px rgba(99, 102, 241, 0.35),
+      inset 0 0 35px rgba(57, 255, 20, 0.4);
+  }
+}
+
+.orb-loopstack-listening {
+  animation: orb-loopstack-pulse 1.8s ease-in-out infinite;
+}

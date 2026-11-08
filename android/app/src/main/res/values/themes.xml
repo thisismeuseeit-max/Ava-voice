@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.AvaVoiceAssistant" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/clay_background_light</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowBackground">@color/clay_background_light</item>
+    </style>
+</resources>

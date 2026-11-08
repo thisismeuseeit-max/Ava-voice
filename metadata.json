@@ -1,0 +1,10 @@
+{
+  "name": "آوا - دستیار صوتی هوشمند اندروید",
+  "description": "دستیار صوتی و شخصی واقعی برای Android با پردازش زبان فارسی، معماری ماژولار کاتلین، رابط Claymorphism سه‌بعدی و سورس کامل قابل کامپایل برای Agent.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

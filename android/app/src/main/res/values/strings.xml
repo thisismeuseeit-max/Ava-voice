@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">آوا</string>
+    <string name="app_subtitle">دستیار صوتی و شخصی اندروید</string>
+    <string name="state_idle">آماده‌باش</string>
+    <string name="state_listening">در حال گوش دادن…</string>
+    <string name="state_processing">در حال پردازش گفتار…</string>
+    <string name="state_executing">در حال اجرای دستور…</string>
+    <string name="state_speaking">در حال پاسخ‌گویی…</string>
+    <string name="state_paused">متوقف موقت (تماس فعال)</string>
+    <string name="state_error">خطا در دریافت صدا</string>
+
+    <string name="perm_mic_title">دسترسی میکروفون</string>
+    <string name="perm_mic_desc">برای شنیدن فرمان‌های صوتی و کلمه بیداربش (Wake Word).</string>
+    <string name="perm_call_title">دسترسی وضعیت تماس</string>
+    <string name="perm_call_desc">برای تعلیق خودکار دستیار در زمان مکالمه تلفنی جهت عدم تداخل صوتی.</string>
+    <string name="perm_contacts_title">دسترسی مخاطبین</string>
+    <string name="perm_contacts_desc">برای برقراری تماس یا ارسال پیام به نام اشخاص.</string>
+
+    <string name="confirm_sms_title">تأیید ارسال پیامک</string>
+    <string name="confirm_sms_msg">آیا مایلید پیامک زیر به %1$s ارسال شود؟\n\n«%2$s»</string>
+    <string name="action_send">ارسال</string>
+    <string name="action_cancel">انصراف</string>
+</resources>
